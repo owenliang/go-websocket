@@ -110,7 +110,7 @@ func wsHandler(resp http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		return
 	}
-	wsConn := wsConnection{
+	wsConn := &wsConnection{
 		wsSocket: wsSocket,
 		inChan: make(chan *wsMessage, 1000),
 		outChan: make(chan *wsMessage, 1000),
